@@ -1,0 +1,49 @@
+
+Time taken to build model: 3.96 seconds
+Time taken to test model on training data: 0.28 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        2533               42.679  %
+Incorrectly Classified Instances      3402               57.321  %
+Kappa statistic                          0.3117
+Mean absolute error                      0.2503
+Root mean squared error                  0.3526
+Relative absolute error                 90.1261 %
+Root relative squared error             94.6099 %
+Total Number of Instances             5935     
+
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 783  67  18  29  44  59 |   a = britneyspears
+ 141 423  53  57 208 109 |   b = justinbieber
+  98 234 224  81 258 104 |   c = katyperry
+ 135 172  57 243 153 190 |   d = ladygaga
+  61 233  82  67 486  71 |   e = rihanna
+ 176 190  48 114  93 374 |   f = taylorswift13
+
+
+=== Error on test data ===
+
+Correctly Classified Instances        2533               42.679  %
+Incorrectly Classified Instances      3402               57.321  %
+Kappa statistic                          0.3117
+Mean absolute error                      0.2503
+Root mean squared error                  0.3526
+Relative absolute error                 90.1261 %
+Root relative squared error             94.6099 %
+Total Number of Instances             5935     
+
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 783  67  18  29  44  59 |   a = britneyspears
+ 141 423  53  57 208 109 |   b = justinbieber
+  98 234 224  81 258 104 |   c = katyperry
+ 135 172  57 243 153 190 |   d = ladygaga
+  61 233  82  67 486  71 |   e = rihanna
+ 176 190  48 114  93 374 |   f = taylorswift13
+

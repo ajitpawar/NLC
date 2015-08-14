@@ -1,0 +1,22 @@
+@relation test
+
+@attribute first_person_pronouns numeric
+@attribute second_person_pronouns numeric
+@attribute third_person_pronouns numeric
+@attribute coord_conj numeric
+@attribute past_tense_verb numeric
+@attribute future_tense_verb numeric
+@attribute commas_num numeric
+@attribute colons_and_semi_colons numeric
+@attribute dash_num numeric
+@attribute paren_num numeric
+@attribute ellipses_num numeric
+@attribute common_nouns numeric
+@attribute proper_nouns numeric
+@attribute adverb_num numeric
+@attribute whwords_num numeric
+@attribute slang_num numeric
+@attribute all_in_upper_case_num numeric
+@attribute avg_len_of_sentense numeric
+@attribute avg_len_of_tokens numeric
+@attribute num_of_sentense numeric

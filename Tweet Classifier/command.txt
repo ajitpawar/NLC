@@ -1,0 +1,4 @@
+java –cp /u/cs401/WEKA/weka.jar weka.classifiers.functions.SMO  -t twit_classificaUon.arff -o -x 10 -i
+java –cp /u/cs401/WEKA/weka.jar weka.classifiers.bayes.NaiveBayes  -t twit_classificaUon.arff -o -x 10 -i
+java –cp /u/cs401/WEKA/weka.jar weka.classifiers.trees.J48  -t twit_classificaUon.arff -o -x 10 -i
+buildarff.py pop:katyperry.twt+justinbieber.twt+rihanna.twt+katyperry.twt+britneyspears.twt+ladygaga.twt+taylorswift13.twt news:bbcnews.twt+cnn.twt+CBCNews.twt+TheOnion.twt+torontostarnews.twt+Reuters.twt+nytimes.twt popvnews.arff

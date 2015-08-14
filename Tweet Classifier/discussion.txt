@@ -1,0 +1,117 @@
+3.1
+According to the data collected by WEKA, SVM (Support Vector Machine)is the best classifier for this task
+as it has the highest accuracy (SVM:50.1%, Naive Bayes: 45.5%, Decision Tree:46.2%) in 10-fold cross-validation.
+
+3.2
+The accuracy dropped significantly from 51% percent to 41.8% while using SVM to classifying tweets from pop stars.
+Instead of doing 10-fold cross-validation, using training data as test data can only improve the accuracy by 0.9%.
+
+This phenomenon might imply that it is difficult to find a decision boundary to classify tweets from different
+pop stars as most tweets from them tend to have similar characteristics in terms of the features we extract.
+
+A similar experiment is done with decision tree. In this case, the accuracy is improved from 36.7% to 71.8%.
+Therefore, comparing to decision tree, SVM cannot be easily overfitted by the training data.
+
+3.3
+News feed are harder to distinguish from each other, as compared to the pop stars.
+
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 695  38  78  64  86  39 |   a = CBCNews
+ 334 127 122 152 128 134 |   b = cnn
+ 487  57 191  87 120  58 |   c = torontostarnews
+ 349  56 112 246 139  95 |   d = Reuters
+ 190  53  45  96 489 126 |   e = nytimes
+ 137  87  53  97 197 428 |   f = TheOnion
+
+Precision Recall     Class
+0.317     0.695      CBCNews
+0.304     0.127      cnn
+0.318     0.191      torontostarnews
+0.332     0.247      Reuters
+0.422     0.489      nytimes
+0.486     0.428      TheOnion
+
+Based on the precision and recall calculated from the confusion table, TheOnion is the most distinct one
+as it has the highest precison, high precision means that the news feeds other than TheOnion are very unlikely 
+to be classified as TheOnion.
+
+On the other hand, the least distinct one is the one with the lowest precision which is CNN.
+
+
+
+3.4 
+The 10-fold validation accuracy of this section is 85.9% which is significantly better compare to all other sections. 
+Such a comparison is not valid, because in other two sections we are trying to classify tweets with tiny differences between each other
+from sources that share similar characteristcs. However, in this section, all tweets from pop stars are grouped as one class and all news feeds are
+grouped as the other class, the difference between the two are extrodinary. It is not a fair game to compare the performance of two sections.
+
+When using half the data, no significant performance regression is observed from the output of WEKA. Based on this fact, it is unlikely to 
+greatly improve the performance merely with more twitter data.
+
+
+3.5
+
+1. 	first_person_pronouns 
+2. 	second_person_pronouns 
+3. 	third_person_pronouns 
+4. 	coord_conj 
+5. 	past_tense_verb 
+6. 	future_tense_verb 
+7. 	commas_num 
+8. 	colons_and_semi_colons 
+9. 	dash_num 
+10. paren_num 
+11  ellipses_num 
+12  common_nouns 
+13  proper_nouns 
+14  adverb_num 
+15  whwords_num 
+16  slang_num 
+17  all_in_upper_case_num 
+18  avg_len_of_sentense 
+19  avg_len_of_tokens 
+20  num_of_sentense 
+
+Rank of information gain of each feature for the previous section:
+3.1 Selected attributes: 18,9,12,13,8,7,16,1,14,19,20,3,5,2,10,4,15,11,17,6 : 20
+3.2 Selected attributes: 9,13,7,8,18,11,20,12,19,1,16,5,10,2,14,3,17,6,4,15 : 20
+3.3 Selected attributes: 13,12,18,8,14,7,3,2,20,11,1,15,4,10,19,9,5,17,6,16 : 20
+3.4 Selected attributes: 20,1,18,19,2,16,12,14,13,11,3,4,5,15,6,7,9,10,8,17 : 20
+
+Feature no.18 (the average length of the sentense) is the feature that has high information 
+gain in all tasks. This feature indeed caputres the one key factor that differentiate each tweet source
+becuase the average length of the sentense can reflect the difference in the characteristc of language using
+within and between all kinds of groups.
+
+Feature no.17 is the least helpful feature for all tasks. The reason might be the frequency of words with all upper case
+characters is too low, almost 90% of tweets from all sources have 0 count for this feature. Therefore it cannot give us
+too much information.
+
+Some features like no.16 modern slang acroynms and no.1 number of first person pronouns have quite different performance in 
+different tasks. For instance, no.16 is the feature with the least information gain in classifying news, but it plays an important
+role in classifying pop stars against news. The explaination is obvious, news feeds are unlikely to use any slang as it sounds
+unprofessional while pop stars tend to use it more often compare to news feed because of their casual way of language using.
+Similarly, pop stars like to talk about themselves, and news almost never use first person pronouns. So when classifying tweets within
+each group, number of first person pronouns is not very informative. However, when putting tweets from both groups together and classify one group
+from another, checking the number of first person pronouns will be a big help. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
